@@ -13,6 +13,6 @@ Technologies used:
 
 
 Ideas for future improvement
-    -
-    -
-    -
+    - Adding more money on top of the initial amount
+    - Linking the site to a databse for long term account retention
+    - Include other financial assets
