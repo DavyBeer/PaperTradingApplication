@@ -13,10 +13,10 @@ rel="stylesheet">
 
 {% if user.is_authenticated %}
     <p>Hi {{ user.username }}!</p>
-    <p><a>Log out</a></p>
+    <a href="{% url 'logout' %}">Log Out</a>
 {% else %}
     <p>You are not logged in.</p>
-    <a>Log In</a>
+    <a href="{% url 'login' %}">Log In</a>
 {% endif %}
 
 {% block content %}
