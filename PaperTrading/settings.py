@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from my_secrets import secrets
 from pathlib import Path
 import os
 
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+s1-gpmqmz31ql*t66!r&ur09^lne&0pec8al-gb!b%##)693!'
+SECRET_KEY = secrets.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
+    'django_secrets',
 ]
 
 MIDDLEWARE = [
