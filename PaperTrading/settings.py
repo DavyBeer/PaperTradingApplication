@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
     'accounts.apps.AccountsConfig',
-    'stocks.apps.stocksConfig',
+    'stocks.apps.StocksConfig',
     'django_secrets',
 ]
 
