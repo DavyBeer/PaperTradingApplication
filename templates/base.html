@@ -12,7 +12,7 @@ rel="stylesheet">
 </header>
 
 {% if user.is_authenticated %}
-    <p>Hi {{ user.username }}!</p>
+    <p>Hi {{ user.username }}! You have a balance of {{ pages.balance }}!</p>
     <a href="{% url 'logout' %}">Log Out</a>
 {% else %}
     <p>You are not logged in.</p>
