@@ -7,10 +7,26 @@
 <body onload="myFunction()">
     <h1>Stocks</h1>
 
-    <button>Buy Stock!</button><br>
-    <button>Sell Stock!</button>
+    <div>
+        <form method="GET">
+        {% csrf_token %}
+            <input type="submit" class="btn" value="+10 pkt" name="mybtn"/>
+        </form>
+    </div>
 
-    <p>Search a stock to begin!</p>
-    <img src="pathto/StockImage.py" />
+
+    <button>Buy Target!</button>
+    <button>Sell Target</button><br>
+    <button>Buy Walmart!</button>
+    <button>Sell Walmart!</button><br>
+    <button>Buy Kroger!</button>
+    <button>Sell Kroger</button><br>
+
+    <p>Here are three stocks to buy</p>
+
+    {% load static %} 
+    <img src="{% static 'images/stocks_graph.png' %}" height="400" width="400"/>
+    <!-- <img src="stocks_graph.png" alt="please work" /> -->
+    
 </body>
 {% endblock content %}
