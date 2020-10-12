@@ -14,5 +14,5 @@ Technologies used:
 
 Ideas for future improvement
     - Adding more money on top of the initial amount
-    - Linking the site to a databse for long term account retention
+    - Linking the site to a database for long term account retention
     - Include other financial assets
