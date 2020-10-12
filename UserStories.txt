@@ -1,0 +1,2 @@
+As a new investment trader, I would like a graphic to show me how related stocks are doing comparatively to each other so I can be more informed about what I am buying.
+As a on the fly investor, I would like quick investment options so I can quickly buy and sell stocks before they change.
