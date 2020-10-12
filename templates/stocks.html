@@ -7,26 +7,54 @@
 <body onload="myFunction()">
     <h1>Stocks</h1>
 
-    <div>
-        <form method="GET">
-        {% csrf_token %}
-            <input type="submit" class="btn" value="+10 pkt" name="mybtn"/>
-        </form>
-    </div>
 
 
-    <button>Buy Target!</button>
-    <button>Sell Target</button><br>
-    <button>Buy Walmart!</button>
-    <button>Sell Walmart!</button><br>
-    <button>Buy Kroger!</button>
-    <button>Sell Kroger</button><br>
+    <button onClick="wallet(cash,-160,totalT,1)">Buy Target!</button>
+    <button onClick="wallet(cash,160,totalT,-1)">Sell Target!</button><br>
+    <button onClick="wallet(cash,-140,totalW,1)">Buy Walmart!</button>
+    <button onClick="wallet(cash,140,totalW,-1)">Sell Walmart!</button><br>
+    <button onClick="wallet(cash,-30,totalK,1)">Buy Kroger!</button>
+    <button onClick="wallet(cash,30,totalK,-1)">Sell Kroger!</button><br><br>
 
-    <p>Here are three stocks to buy</p>
+    <label for="output">New Balance:</label><input type="textbox" name="output"></input><br>
+    <label for="output2">Target Stocks:</label><input type="textbox" name="output2"></input><br>
+    <label for="output3">Walmart Stocks:</label><input type="textbox" name="output3"></input><br>
+    <label for="output4">Kroger Stocks:</label><input type="textbox" name="output4"></input>
+
+    <br>
+
 
     {% load static %} 
-    <img src="{% static 'images/stocks_graph.png' %}" height="400" width="400"/>
+    <img id="pic" src="{% static 'images/stocks_graph.png' %}" height="400" width="600"/>
     <!-- <img src="stocks_graph.png" alt="please work" /> -->
-    
+
+    <script type="text/javascript">
+        var cash = 500;
+        var krogerUp = 30;
+        var krogerDown = -30;
+        var walmartUp = 140;
+        var walmartDown = -140;
+        var targetUp = 160;
+        var targetDown = -160;
+        var targetStock = 0;
+        var walmartStock = 0;
+        var krogerStock = 0;
+        var buy = 1;
+        var sell = -1;
+        var total = [500];
+        var totalK =[0];
+        var totalW = [0];
+        var totalT = [0];
+
+        function wallet(cash, stock, option, thing) {
+            newcash = cash + stock;
+            option.push(thing);
+            total.push(stock);
+            document.getElementsByName('output')[0].value= total.reduce(function(a,b){return a+b;},0);
+            document.getElementsByName('output2')[0].value= totalK.reduce(function(a,b){return a+b;},0);
+            document.getElementsByName('output3')[0].value= totalW.reduce(function(a,b){return a+b;},0);
+            document.getElementsByName('output4')[0].value= totalT.reduce(function(a,b){return a+b;},0);
+        }
+    </script>
 </body>
 {% endblock content %}
